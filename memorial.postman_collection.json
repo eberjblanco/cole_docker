@@ -1,0 +1,4139 @@
+{
+	"info": {
+		"_postman_id": "460a6e7c-f0f0-478c-b9af-ce20e737d37f",
+		"name": "memorial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2201636"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "user_add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Eber\",\r\n    \"last_name\" : \"Blanco\",\r\n    \"email\":\"eberj.blanco@gmail.com\",\r\n    \"password\" : \"12345678\",\r\n    \"phone\" :\"12312313213\",\r\n    \"code\" : \"+58\",\r\n    \"locale\": \"es-es\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/user",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user_edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MDYxMDM3MjAsImV4cCI6MTcwNjE0NjkyMCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOiIxZWViYWJkYy0xMDA4LTY2ZTAtYjg3Mi05N2ViZDQyY2NjOWYiLCJuYW1lIjoiRWJlciIsImxhc3RuYW1lIjoiQmxhbmNvIiwiaW1hZ2UiOm51bGwsImVtYWlsIjoiZWJlcmouYmxhbmNvQGdtYWlsLmNvbSJ9.YZ3tKC67pvSmkKVouPnXF81kzAiekZmzDbuxLsf1tUA0_jNOwB_mYBefdzfdToHfyk4W4reUERV8XPVudUL8NUkeAgEKDgwVllSKmEzsno9JFbX8Tq8a1n8bO3w7aZmKn6PIC18_0wMz5or1hWz8LCi-I-HhsLGaAqvUPJGzKKUGRNhBx2EOsUTnbj9DI4zBQAIkQezqzZLmcHkvLoNizGgaW6SBIAGyxmijJHmzt2SJD9aUROivH1ClnEuiOW5jG3SoqFEsWUKhGfvRimmI7fTACVFfJ2A3JQSvJTg38IDebNf1oie_B8pICh-W9sKrNRpNk4PVRL7dZBS2tTaV8Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/eberj/Pictures/1947456.jpg",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "name2111",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "last_name",
+									"value": "last_name2111",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "phone2111",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "delete_image",
+									"value": "false",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "locale",
+									"value": "br",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/es/user-edit",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"user-edit"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user_get",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTE2NDAxOTgsImV4cCI6MTcxMTY4MzM5OCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOiIxZWVlMmZlMy1iMDljLTY2ZjAtODAzZC1iZjQ1Y2EwYzFjZDciLCJuYW1lIjoiRWJlciIsImxhc3RuYW1lIjoiQmxhbmNvIiwiaW1hZ2UiOm51bGwsImVtYWlsIjoiZWJlcmouYmxhbmNvQGdtYWlsLmNvbSJ9.YYNN24RkHBNRqAxEYDe7gbDPXgXlbXvoYKeBLCat-RFOxDGi6IIDzypbkd8Qut32V3uH7Sky6Q6jd1oh3wWJGGsS1gZOeCCdPfo0RqkhMo-cfdKlFsnjQ6vQ_uB5dubHvijYFUC033cyAyHAKyjX8hAbhmQAtsy7Dvdr3h9dB9gMgkx-z3EqleCPIkbT4GiuuP0yoYAcxnh-otvge3-rSr1CmXXUsOo07j2QFCvW-5vQk83WpWwPfUxuYBKspKoIjaI0NrCIopiIlQgA41mM8l9Kto8jUhZcEng1oc1TrfPNwzZ7LwdP5Trg1D628RKZ2rGempHD5XD02EEL9eSb_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ruta}}/es/user",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user_validate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"eberj.blanco@gmail.com\",\r\n    \"name\": \"Eber\",\r\n    \"last_name\":\"Blanco\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/user-validate",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"user-validate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user_validate_test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ruta}}/es/free/user-validate-test?token=sVogIHtBoBpEm_NqhWtr5T7Tfj0RumJ0nQl_pJmg3ueFJDlZDTZ6LCL6d344t0iFYYWPMQ",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"free",
+								"user-validate-test"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "sVogIHtBoBpEm_NqhWtr5T7Tfj0RumJ0nQl_pJmg3ueFJDlZDTZ6LCL6d344t0iFYYWPMQ"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user_change_password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"12345678\",\r\n    \"NewPassword1\": \"123456789\",\r\n    \"NewPassword2\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/user-change-password",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"user-change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user_change_email",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2OTYzNTA5NTQsImV4cCI6MTY5NjM5NDE1NCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOiIxZWU2MjBhYi1hNGQ2LTZkMTAtYTUzMC1iN2NmNDAyNDg2MzQiLCJuYW1lIjoiRWJlciIsImxhc3RuYW1lIjoiQmxhbmNvIiwiaW1hZ2UiOm51bGwsImVtYWlsIjoiZWJlcmouYmxhbmNvQGdtYWlsLmNvbSJ9.HolAoPAIRv-iCJps63va8hSrqAXUNOjX8668YgVcJVuJ_laD9yKjcJFN_89c0W4c1bImPgFDMvJFPa03NSFAUhO-5StS1EdGC6efDXrNJH7QhGLjwTRVjD_atvRzz8RcLoXZ-_8mDYa6yX6Z-LOAX00aRMEdT9OG2ZqX5e26CjdxsWnwb-8P3gIPSOYPYw81eURHAflw54TW2JrOBtayYkUPS-WcWSeiyAFEy6RuAvAmQChq3jgkhKbtDkSj4MXKpc8Bgt0Gco6ZNjiEB9xVksHX0Udeuf7HV2EXfl7w1Wp_SNCguqUlazRxP62LmVIgTDM4Sx2DkqJ8DBUWMeuZXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newEmail\":\"eberj.blanco@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/user-change-email",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"user-change-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-recovery-password-validate-code",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"eberj.blanco@gmail.com\",\r\n    \"code\":\"006503\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/user-recovery-password-validate-code",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"user-recovery-password-validate-code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-recovery-password-send-code",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"eberj.blanco@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/user-recovery-password-send-code",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"user-recovery-password-send-code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-change-password-recovery",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"eberj.blanco@gmail.com\",\r\n    \"code\": \"006503\",\r\n    \"new_password_1\": \"12345678\",\r\n    \"new_password_2\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/user-change-password-recovery",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"user-change-password-recovery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user_delete_all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MDE5NTgxODIsImV4cCI6MTcwMjAwMTM4Miwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOiIxZWU4ODhkZi1jYTM4LTZmMDYtYjA4Ny0zMTgzNjk4ZGIxYTQiLCJuYW1lIjoiRWJlciIsImxhc3RuYW1lIjoiQmxhbmNvIiwiaW1hZ2UiOm51bGwsImVtYWlsIjoiZWJlcmouYmxhbmNvQGdtYWlsLmNvbSJ9.lEA-F3l_qeYJ7GKdevSlkUWxCrxRJmNOZxuaaVsTnBISsQKoNUW2hsZJPr30Bv1f9BYb-EQV3pPDyxp3XuvJaaTADkMOTNFszRjgqt02mVk6wjC4k70HE7CmMY9sCkQ9yxAQZt3sfTZS8Fkhf31lVbqul1jZZlgeAu8WGtXdh207qrQLxUUK__2LTKrVe2Wz2Ls8paIJQ2_JPRe7yHAEd5Z0eX82voe0gw0DhXXbDSSUpwK3lt3vCWRav2cDYJq8s5vzz_bP03uzCraV_UBM5f26jNg8Nc0a4gzoJsvrnE0zRpEOES-wsJws8tz22Xv_3bNVQMaH54nOVHuq4rNFAQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ruta}}/{{locale}}/user-all-info",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"{{locale}}",
+								"user-all-info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "creditcards",
+			"item": [
+				{
+					"name": "cc_add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM1NDgwODIsImV4cCI6MTY4MzU5MTI4Miwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.vqa5t73LyRFe9aQjLWL1qlUPE4xXgPbZMr9alVkQsFmwPtv9EO2hF-14u__YK0nBPD7HewHSyMXnAPdxDap0xjOMoR80WqwI-qVGRG2122TSO4voy0E-2swSt_utQNXiDzcEtX3TrEUc5lX38NgIRyFS6N2_8QFPu3J0yCetb0PM40iRlmnRjOuTXB9PHYEAwSUvfdMpuD79MKiEnZeuyCcbh-MkbZPNGLF5Xf10niHtHZDSoiRvRl40IQt3NxxsjnvOnHRjjghphGUdEapUROh6eObBDOHn2pvCl_Mwm08z46EZyMI6XX3UE3tZuYs8vgxfdWyhKpzn144pZWNytw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"card_name\" : \"mmmm\",\r\n    \"card_number\" : \"123\",\r\n    \"card_expired\" : \"2020-01-01\",\r\n    \"card_cvc\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/creditCard",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"creditCard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cc_edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM1NDgwODIsImV4cCI6MTY4MzU5MTI4Miwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.vqa5t73LyRFe9aQjLWL1qlUPE4xXgPbZMr9alVkQsFmwPtv9EO2hF-14u__YK0nBPD7HewHSyMXnAPdxDap0xjOMoR80WqwI-qVGRG2122TSO4voy0E-2swSt_utQNXiDzcEtX3TrEUc5lX38NgIRyFS6N2_8QFPu3J0yCetb0PM40iRlmnRjOuTXB9PHYEAwSUvfdMpuD79MKiEnZeuyCcbh-MkbZPNGLF5Xf10niHtHZDSoiRvRl40IQt3NxxsjnvOnHRjjghphGUdEapUROh6eObBDOHn2pvCl_Mwm08z46EZyMI6XX3UE3tZuYs8vgxfdWyhKpzn144pZWNytw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":3,\r\n    \"card_name\": \"prueba\",\r\n    \"card_number\": \"prueba\",\r\n    \"card_expired\": \"2023-12-01\",\r\n    \"card_cvc\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/creditCarde",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"creditCarde"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cc_get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM1NDgwODIsImV4cCI6MTY4MzU5MTI4Miwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.vqa5t73LyRFe9aQjLWL1qlUPE4xXgPbZMr9alVkQsFmwPtv9EO2hF-14u__YK0nBPD7HewHSyMXnAPdxDap0xjOMoR80WqwI-qVGRG2122TSO4voy0E-2swSt_utQNXiDzcEtX3TrEUc5lX38NgIRyFS6N2_8QFPu3J0yCetb0PM40iRlmnRjOuTXB9PHYEAwSUvfdMpuD79MKiEnZeuyCcbh-MkbZPNGLF5Xf10niHtHZDSoiRvRl40IQt3NxxsjnvOnHRjjghphGUdEapUROh6eObBDOHn2pvCl_Mwm08z46EZyMI6XX3UE3tZuYs8vgxfdWyhKpzn144pZWNytw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/creditCard",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"creditCard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cc_delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM1NDgwODIsImV4cCI6MTY4MzU5MTI4Miwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.vqa5t73LyRFe9aQjLWL1qlUPE4xXgPbZMr9alVkQsFmwPtv9EO2hF-14u__YK0nBPD7HewHSyMXnAPdxDap0xjOMoR80WqwI-qVGRG2122TSO4voy0E-2swSt_utQNXiDzcEtX3TrEUc5lX38NgIRyFS6N2_8QFPu3J0yCetb0PM40iRlmnRjOuTXB9PHYEAwSUvfdMpuD79MKiEnZeuyCcbh-MkbZPNGLF5Xf10niHtHZDSoiRvRl40IQt3NxxsjnvOnHRjjghphGUdEapUROh6eObBDOHn2pvCl_Mwm08z46EZyMI6XX3UE3tZuYs8vgxfdWyhKpzn144pZWNytw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/creditCard",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"creditCard"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PeriodFree",
+			"item": [
+				{
+					"name": "PeriodFree_add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODYxNTI4NDEsImV4cCI6MTY4NjE5NjA0MSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoidGVzdEB0ZXN0LmNvbSJ9.TSaAmODrDWsmSMfKiJXDR8ELm4zEDMoPRS1X-d3Q256-U8aPR2_kAsV9Y3gVeaFqzhHfgqwmr8BGk8a3Pj3ZpCb80Z32AMyno6J-0jP2SN8BotoNc2RfULq33tFCT7Nkv_077gD9p1p1maOnyiRFplNH5ItUcEwDbWSN_IaoPS2iKZUCNQjAV2QXNcby63D_FZ9nLuoHdk-rG9qR3e0YoZvYUKLNM9Hi3NoyrnF-9Cso_Wkim9rRhCRwnOFMWpCmZ8ILYLxFyA1CiCFsNwNKVZtRwR3_uzYULAd0Mxeu6_fradmIk1qWvZxpDduPqqW3H6Fv031nDld8eDzvCbAcPQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/periodFree",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"periodFree"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PeriodFree_get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM3MjcxNDgsImV4cCI6MTY4Mzc3MDM0OCwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.YrSHP_FZf081FiVtd00mDt7pKEbLiUbSDECJfQcZsqHXUvVCd7aLGM_vH-WtyFg8Zrhq_Fpi58FeUxdeNAbevvmxCL2HK0aO1-o7yX1a7dhSHfzhshc3FW-YUv9zUqEd1esAD1oOJep1JI47rV2x4jVTw2QWVkkH3DHmeOKZvEH3WjYm4aGRM36CGIVN318K1eZaIBW1mfwkWkd_P_-ViNet_2ZlIHZMa97az1p5glUcjy22JWXohSoaG9E9Gu3VGPZfNoYmb3Zrv1BsG2zVp8YeIzEKP0N1_08a0f3Ppn6N3S_kmr6xqwzXV8Kj9xyWyhxh2iOPAiDCuRBeMpBzSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/periodFree",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"periodFree"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Period_free_delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM3MjcxNDgsImV4cCI6MTY4Mzc3MDM0OCwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.YrSHP_FZf081FiVtd00mDt7pKEbLiUbSDECJfQcZsqHXUvVCd7aLGM_vH-WtyFg8Zrhq_Fpi58FeUxdeNAbevvmxCL2HK0aO1-o7yX1a7dhSHfzhshc3FW-YUv9zUqEd1esAD1oOJep1JI47rV2x4jVTw2QWVkkH3DHmeOKZvEH3WjYm4aGRM36CGIVN318K1eZaIBW1mfwkWkd_P_-ViNet_2ZlIHZMa97az1p5glUcjy22JWXohSoaG9E9Gu3VGPZfNoYmb3Zrv1BsG2zVp8YeIzEKP0N1_08a0f3Ppn6N3S_kmr6xqwzXV8Kj9xyWyhxh2iOPAiDCuRBeMpBzSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/periodFree",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"periodFree"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PeriodFree_edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM3MjcxNDgsImV4cCI6MTY4Mzc3MDM0OCwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.YrSHP_FZf081FiVtd00mDt7pKEbLiUbSDECJfQcZsqHXUvVCd7aLGM_vH-WtyFg8Zrhq_Fpi58FeUxdeNAbevvmxCL2HK0aO1-o7yX1a7dhSHfzhshc3FW-YUv9zUqEd1esAD1oOJep1JI47rV2x4jVTw2QWVkkH3DHmeOKZvEH3WjYm4aGRM36CGIVN318K1eZaIBW1mfwkWkd_P_-ViNet_2ZlIHZMa97az1p5glUcjy22JWXohSoaG9E9Gu3VGPZfNoYmb3Zrv1BsG2zVp8YeIzEKP0N1_08a0f3Ppn6N3S_kmr6xqwzXV8Kj9xyWyhxh2iOPAiDCuRBeMpBzSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":2,\r\n    \"enabled\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/periodFreee",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"periodFreee"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "payment_add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM2MzUxMjgsImV4cCI6MTY4MzY3ODMyOCwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.kY8cwRSLeRD4k6SaJEx8t0dhS5DbbfanjTqye1qcuMXVks8u79KYBQciTOcDVkuuiz6i3muGALK7q6M3Ga3vBisQZXhTbO8AQaQOEQx8U-wP3x6pgXsEBpSj1OBE0RycsoKsOKsWvz-GfaSswEAfbCiIcFNb-eO2YZRqKcgulhTQxiN3YvAG_t9kD0cSCBeleUdq-NpMllS53tyxckfr5zrbwNHz_mZbzpXUDZ2CP6vMNjGV5GV40cTrKBVs8HGXqPYFhgy4z1h3g4hLt2gQElhTcT1u2kS0crqpohIOTe7Ud4mZcUJHq0_1-MTpAN1Vl5ixhqKPyl1i9eycowYhcQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mount\":100,\r\n    \"user_id\":1,\r\n    \"cardcredits_id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/payment",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payment_get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM2MzUxMjgsImV4cCI6MTY4MzY3ODMyOCwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.kY8cwRSLeRD4k6SaJEx8t0dhS5DbbfanjTqye1qcuMXVks8u79KYBQciTOcDVkuuiz6i3muGALK7q6M3Ga3vBisQZXhTbO8AQaQOEQx8U-wP3x6pgXsEBpSj1OBE0RycsoKsOKsWvz-GfaSswEAfbCiIcFNb-eO2YZRqKcgulhTQxiN3YvAG_t9kD0cSCBeleUdq-NpMllS53tyxckfr5zrbwNHz_mZbzpXUDZ2CP6vMNjGV5GV40cTrKBVs8HGXqPYFhgy4z1h3g4hLt2gQElhTcT1u2kS0crqpohIOTe7Ud4mZcUJHq0_1-MTpAN1Vl5ixhqKPyl1i9eycowYhcQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"id\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/payment",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payment_delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM2MzUxMjgsImV4cCI6MTY4MzY3ODMyOCwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.kY8cwRSLeRD4k6SaJEx8t0dhS5DbbfanjTqye1qcuMXVks8u79KYBQciTOcDVkuuiz6i3muGALK7q6M3Ga3vBisQZXhTbO8AQaQOEQx8U-wP3x6pgXsEBpSj1OBE0RycsoKsOKsWvz-GfaSswEAfbCiIcFNb-eO2YZRqKcgulhTQxiN3YvAG_t9kD0cSCBeleUdq-NpMllS53tyxckfr5zrbwNHz_mZbzpXUDZ2CP6vMNjGV5GV40cTrKBVs8HGXqPYFhgy4z1h3g4hLt2gQElhTcT1u2kS0crqpohIOTe7Ud4mZcUJHq0_1-MTpAN1Vl5ixhqKPyl1i9eycowYhcQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/payment",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payment_edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODI2ODI1MTMsImV4cCI6MTY4MjcyNTcxMywicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.G8-xxYPFiNDX80tPzTW23CECesnDj9sMWurH6N1dUldC2gqYXHXg75b65O5TvuEKF9Mgg_LsVnn9DzoBzWyeUn_Ue0ttxsU5l3I2moeVUbsHVuJ3RuBm94fgP2hDGjeTz2WJqOLxpsWs-ppP_ZeZdpNniF3tcl2QkxnWaMLtrdTBhprEud8ueF3hN48-DaVDqyKBInjbnYH4IO0R84BBOrDahgN0Ss4GKw3DeI29XTVK7cBM0NQnMbScAkmO7sLepJQUkVb1h4qUJEZp4ItYXGzgFk0FJj9WL0nc08IBVIzCj0fZBAm2Za_9uSJ5ysyFlWyRtZHRb9i3pUCr1AygkQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"mount\":1300\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/paymente",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"paymente"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Memorials",
+			"item": [
+				{
+					"name": "memorials_add",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTI3NjAxMjcsImV4cCI6MTcxMjgwMzMyNywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOiIxZWVmMWQ0MC03OGYwLTYwMDgtOWFjMi1iNzM0NDQyZjM1OGMiLCJuYW1lIjoiRWJlciIsImxhc3RuYW1lIjoiQmxhbmNvIiwiaW1hZ2UiOm51bGwsImVtYWlsIjoiZWJlcmouYmxhbmNvQGdtYWlsLmNvbSJ9.ydJH_oCVp2y5q-rxXSlNc8ySz_1T0ZWd4P2ArGrkUBtYu07FcIWSrudLkrYLgs81WkKRyE9GVjrssLONKYfAiMDqOdDP32wUjnNeBCHmMC2hjl3WjlkVSB-cIlzxp9KCGwPnualHjlDb9M6HuoJG9jNW5k2SMI6ejHRcbyeqVxAI2-R-EK_tdk0MZNr-D7OdZdUqQcCsyq0l1rPmWkg3yfeb5j74EpcbNGzffXa6OCNohkvb3zAG-jpJpuJUg829w9TAqEFcKsavpSnbDT7UHewMLgv0ce2jIVnT8WoL88J7lEqH9wXdZ4A2tK_Ufd0gvfiqOEVkZHXUd3LJqiP4Ag",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "name",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "last_name",
+									"type": "text"
+								},
+								{
+									"key": "die_city",
+									"value": "die_city",
+									"type": "text"
+								},
+								{
+									"key": "die_country",
+									"value": "die_country",
+									"type": "text"
+								},
+								{
+									"key": "die_date",
+									"value": "2024-03-04",
+									"type": "text"
+								},
+								{
+									"key": "relations",
+									"value": "relations",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "location",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"contentType": "Auto",
+									"type": "file",
+									"src": "/C:/Users/eberj/OneDrive/Imágenes/62ca13eeb30d0.jpg"
+								},
+								{
+									"key": "photo_location",
+									"type": "file",
+									"src": "/C:/Users/eberj/OneDrive/Imágenes/62ca13eeb30d0.jpg"
+								},
+								{
+									"key": "message",
+									"value": "Lorem ipsum dolor sit amet consectetur adipiscing elit, ligula proin porttitor tellus gravida cursus ultrices scelerisque, senectus maecenas nec orci aptent leo. Dictum at fusce ridiculus risus platea lacus laoreet a eget sem sociosqu curae tellus placerat ac nullam, hac donec potenti ultricies himenaeos tincidunt pharetra tempor praesent eleifend luctus fringilla litora velit condimentum. Eleifend vehicula netus eros donec metus potenti parturient, erat porta cubilia et magnis pellentesque dignissim, lacus velit ante consequat sed mollis. Quisque mollis nulla magnis placerat hendrerit aliquam sollicitudin senectus id mattis lectus volutpat pulvinar, nec urna parturient sapien quam gravida et nascetur accumsan pretium vitae laoreet. Enim habitant vulputate ut euismod hac ligula vehicula aliquet, varius blandit sociosqu pharetra sed tempus. Mattis quis at vel orci ut, pretium sociis nam dui dapibus in, tempor commodo nostra venenatis. Fames lectus praesent sem consequat scelerisque sem.",
+									"type": "text"
+								},
+								{
+									"key": "photos_1",
+									"type": "file",
+									"src": "/C:/Users/eberj/OneDrive/Imágenes/62ca13eeb30d0.jpg"
+								},
+								{
+									"key": "photos_2",
+									"type": "file",
+									"src": "/C:/Users/eberj/OneDrive/Imágenes/62ca13eeb30d0.jpg"
+								},
+								{
+									"key": "videos_1",
+									"type": "file",
+									"src": "/C:/Users/eberj/OneDrive/Imágenes/62ca13eeb30d0.jpg"
+								},
+								{
+									"key": "son_name_1",
+									"value": "hijo1",
+									"type": "text"
+								},
+								{
+									"key": "line_live_desc_1",
+									"value": "line_live_desc_1",
+									"type": "text"
+								},
+								{
+									"key": "line_live_image_1",
+									"type": "file",
+									"src": "/C:/Users/eberj/OneDrive/Imágenes/62ca13eeb30d0.jpg"
+								},
+								{
+									"key": "line_live_date_1",
+									"value": "alguna",
+									"type": "text"
+								},
+								{
+									"key": "birth_date",
+									"value": "2023-07-10",
+									"type": "text"
+								},
+								{
+									"key": "city_birth",
+									"value": "city_birth",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "country",
+									"type": "text"
+								},
+								{
+									"key": "products",
+									"value": "price_1OzQkJIZLV3rtDN8TLInZ80H",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/{{locale}}/memorials?page=1&rows=31",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"{{locale}}",
+								"memorials"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "rows",
+									"value": "31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "memorials_edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODMyOTAzNjgsImV4cCI6MTY4MzMzMzU2OCwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.sXAMAEyq_JRD8jyfCZNkPQyopk76tBdPKVP9EKmoK4JYpK3xeBStEvlty0hGqw9tt7bbHoULph84Z_B3bazDdehAoZ8cVXB-KkAOThmv3qSRxRYFxr43xEE2ECc6PNuFM0sWD8A6LY6wPLB-ixuvw7GcMKOguxk1S_XY8xI5K63T03lDV_wW61WFhGNHYOI7AjVaizP49_-B4-5oIH5wjOi1L-gyCFjqF_OZe-zLVzrtH2KPYvAWUt7f8svFoCcA8vyFZv8GqHzqII9PWdyHLtG8TrCaCUfioqKSGJUx1TOifDuyNvV4AmfCOG9EAK2YilctgQcIBXDXN7R_-rvcyw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"bbb\",\r\n  \"id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/memorials",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"memorials"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "memorials_get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTIzNTE2OTUsImV4cCI6MTcxMjM5NDg5NSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOiIxZWVmMWQ0MC03OGYwLTYwMDgtOWFjMi1iNzM0NDQyZjM1OGMiLCJuYW1lIjoiRWJlciIsImxhc3RuYW1lIjoiQmxhbmNvIiwiaW1hZ2UiOm51bGwsImVtYWlsIjoiZWJlcmouYmxhbmNvQGdtYWlsLmNvbSJ9.IgnnAiXz1PAsAahp2q3uF7C79WdS_HoS5pOifEJLpvodDOyhvLq-mPcAuMEIMo3FxiR-u0zLrPfUqDot8iB6_il8MApDkiate_eDAY-rDBJA37W5poA4nwzI_goiqsidl1VbowcdtDXyBk8qSLY7FyjB1O2jzroWBth916E8G-g4TmmzYDb4dVohsAsXuEaRDvvJ2IxSpDs3K5v1XIFGMjPlBBefKd8zZqx5LrVXCQB2_iPQZyd0evQsQ43Ta6vnpHovLShPdabjH9Rh9bI_iastdE1YJJVxv5FIbUVRDjAHBThwLnykGV7t_GyivD1bN_WWzMH4fH3v-gn0FLl_6w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "page",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "rowPage",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/{{locale}}/memorials?page=1&rows=31",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"{{locale}}",
+								"memorials"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "rows",
+									"value": "31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "memorials_delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2OTA0NzQzMDYsImV4cCI6MTY5MDUxNzUwNiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOjIsIm5hbWUiOiJFYmVyIiwibGFzdG5hbWUiOiJCbGFuY28iLCJpbWFnZSI6bnVsbCwiZW1haWwiOiJlYmVyai5ibGFuY29AZ21haWwuY29tIn0.MEOM54EeUNF2oQS_KN3ov9VXHyMgCaBPhZycqjBRE35Q9_0XEg8FXIxLJbP9NNEh2a4ye9iO_y1IfjFUpzlfzlRm3LC5uza-LjTyixQ9vHBFvBHq3a0FH2PsABVm-qOZ3gOeqpl3flRyqEHEJsH5VeyJly5g1qzYoxmUMaZKDmv6FI6LCz1Tn9H5imNxmUDn617DISv1mD1PkPzWWd_38TnUtldB3bFZBWPbyAkROmzmKGVt9tR75_B4psO6mjH_0PhCt_0vBAoMSjgWTjgOCgDi41K2u2By-w4IKCSlYxqWzEtzEyU8UU2Ru4-pvlqeg6NplM9Dsnhd7uGWnW_mFg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/memorials",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"memorials"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Personal Information",
+			"item": [
+				{
+					"name": "personal_info_add",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "memorials_id",
+									"value": "52",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "eber",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Blanco",
+									"type": "text"
+								},
+								{
+									"key": "die_city",
+									"value": "caracas",
+									"type": "text"
+								},
+								{
+									"key": "die_country",
+									"value": "venezuela",
+									"type": "text"
+								},
+								{
+									"key": "die_date",
+									"value": "2020-12-01",
+									"type": "text"
+								},
+								{
+									"key": "relations",
+									"value": "amigo",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "caracas",
+									"type": "text"
+								},
+								{
+									"key": "fullname_father",
+									"value": "papa",
+									"type": "text"
+								},
+								{
+									"key": "fullname_mother",
+									"value": "mama",
+									"type": "text"
+								},
+								{
+									"key": "spouse",
+									"value": "spouse",
+									"type": "text"
+								},
+								{
+									"key": "photo_location",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "message",
+									"value": "message",
+									"type": "text"
+								},
+								{
+									"key": "image_animate",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/es/personalInfo",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"personalInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "personal_info_free",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "B6lgUV1c3LrhDI7yruUT-N0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/es/personal-info-free?id=fmv7HNK1zzkqzu38yKrqO8Q",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"personal-info-free"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "fmv7HNK1zzkqzu38yKrqO8Q"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "personal_info_get",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ruta}}/{{locale}}/personal-info?id=1eedfe81-9d93-642a-9a12-cf5dbe138f39",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"{{locale}}",
+								"personal-info"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1eedfe81-9d93-642a-9a12-cf5dbe138f39"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "personal_info_edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTAyNjA2NjIsImV4cCI6MTcxMDMwMzg2Miwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VyX2lkIjoiMWVlZDU4N2QtZjMzNS02MGY0LTlkZmUtYzFjZTVmODE0NzY5IiwibmFtZSI6IkViZXIiLCJsYXN0bmFtZSI6IkJsYW5jbyIsImltYWdlIjpudWxsLCJlbWFpbCI6ImViZXJqLmJsYW5jb0BnbWFpbC5jb20ifQ.mdfHjOp8xgHxf0-g7-6A-7-LuRL8g8GgOsepfkZ5Fv_wMMbKPP6TzXIrkkFD2ijsZAxxitRYJJrFvnkM9ax8wg2JDhhINpGxJN4IMzof-gu6Ats98EgypNZpDoK3rVlbPXVTpST251HlsDkCky2SN6kBF0bya6mNLVEojb_uxXwuMihSRReV1OtNBnJI-DbpVsGzpwN_9xBciV9RFihb78m17_OwmJBRWDkGntK_3Lb9R4RFSi9f8wxw8yW51e1TyIi7lxMBf4IszCpOwiNqsA9Nv7sC7IOKTajJMy7QySE0LDOr1UoKHE_Z3bZ_PzlMXmothEF7fXWSlxQmhrNYGA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1eedd78c-d40f-6cf4-918d-5f88cec4c415",
+									"type": "text"
+								},
+								{
+									"key": "son_name_1",
+									"value": "prueba nvo hijo",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "delete_son",
+									"value": "1eedc7d6-1b8d-69da-b9e6-eb14e16d50c0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "delete_line_live",
+									"value": "1eee0832-d1dc-6190-af13-1197601387d2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "line_live_id_1",
+									"value": "1eee0832-d1f0-6410-ac17-1197601387d2",
+									"type": "text"
+								},
+								{
+									"key": "line_live_order_1",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "line_live_desc_1",
+									"value": "yuju999",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "line_live_date_1",
+									"value": "alguna999",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "line_live_image_1",
+									"type": "file",
+									"src": "/C:/Users/eberj/Downloads/IsologoMemorial_UV.png",
+									"disabled": true
+								},
+								{
+									"key": "delete_video",
+									"value": "1eedbcf8-9ece-6d96-8e26-e58d5aedb7c8",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "line_live_id_2",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "line_live_order_2",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "line_live_date_2",
+									"value": "una nueva fecha 555",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "line_live_desc_2",
+									"value": "uan nueva desc555",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "photo_1",
+									"type": "file",
+									"src": "/C:/Users/eberj/OneDrive/Imágenes/62ca13eeb30d0.jpg",
+									"disabled": true
+								},
+								{
+									"key": "delete_photo",
+									"value": "1eedbcf1-e360-6326-837e-db119d96fde0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "video_1",
+									"type": "file",
+									"src": "/C:/Users/eberj/OneDrive/Imágenes/62ca13eeb30d0.jpg",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "name_vo",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "last_name",
+									"value": "lastname_vo",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fullname_father",
+									"value": "fullname_father_vo",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fullname_mother",
+									"value": "fullname_mother_vo",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "spouse",
+									"value": "spouse_nvo",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "die_city",
+									"value": "die_city_nvo",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "die_date",
+									"value": "2025-04-10",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "birth_date",
+									"value": "2025-04-10",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "relations",
+									"value": "relations_nvo",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "location",
+									"value": "location_nvo",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "country",
+									"value": "country_nvo",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "city_birth",
+									"value": "citybirth_nvo",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/eberj/OneDrive/Imágenes/mario3840x1080.jpg",
+									"disabled": true
+								},
+								{
+									"key": "photo_location",
+									"type": "file",
+									"src": "/C:/Users/eberj/OneDrive/Imágenes/mario3840x1080.jpg",
+									"disabled": true
+								},
+								{
+									"key": "delete_line_live_image_1",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/{{locale}}/memorial-information",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"{{locale}}",
+								"memorial-information"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "personal_info_delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2OTcwMjU3NjcsImV4cCI6MTY5NzA2ODk2Nywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOiIxZWU2MTQyMy0yZmE3LTY0ODQtYWYyZS01MTRjN2U4YzI0YzQiLCJuYW1lIjoiRWJlciIsImxhc3RuYW1lIjoiQmxhbmNvIiwiaW1hZ2UiOm51bGwsImVtYWlsIjoiZWJlcmouYmxhbmNvQGdtYWlsLmNvbSJ9.MBzFpT2lcaqekQLh6d2dOVCh8bUKNDcP02kSmFs53NohUj3F2UfdXJ_VsdhMLz7kaSZYfB6M0kWKZmrNbRpvHfpHq2386RV6vNTcqLf0rzTEsg6TsB0Dx25OFHQnmpxxua0eiEAw5lF95sFg9GUFIBBDzw8cXr2r9jdjii9IslrY2WOqwRQSGWFZdWLqAVSMpON65iNJpLZu6HHPTDRjyLTvi0yEckWceu4qSuWAXq13wmwb3-btghfqfqqIf5tXGBJEuyPiVqEoOAvF6OIU0m79xHqdETFjS0W7uhUBgnjTBrFf8AvUb3fn-uQlfPfHQidRoovTJmGW5fgvseltCQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1ee61425-b930-6686-99e1-135bd7d1050c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/personal-info",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"personal-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "personal-info-all",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ruta}}/{{locale}}/personal-info-all",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"{{locale}}",
+								"personal-info-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "personal_info_disabled",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2OTc3MTcyNTQsImV4cCI6MTY5Nzc2MDQ1NCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOiIxZWU2ZGI2OS0yMzcxLTY2NTItYjcxZC05NzBmNGMwMDYzMTIiLCJuYW1lIjoiRWJlciIsImxhc3RuYW1lIjoiQmxhbmNvIiwiaW1hZ2UiOm51bGwsImVtYWlsIjoiZWJlcmouYmxhbmNvQGdtYWlsLmNvbSJ9.i3QKpYLQtElMC75xmxqAn4EIvF3RyoyEkFCckww8NwZ2KjhoVtgMYmJ0akGpOmN7ONEWMen1NwD5ZuKpP-VNVPvB8MGp7-D5TbU0lrxu6hEkVz5IQ09YpqCA7743oJTsSRibLcjPfSLMA30WpL5t3HxRXFh6HaZZc3Xg4II3CiaPlzAm9HDVoNfrLP7QR83bpCeivI1p9OxKPcuG2jwttLpupDTVuRXjIWH0gtq7wbo4WmNdpi7KLFN0xUQ-zJfeHPtJX51oLgyOuiGBPacleaw7QNbQW6i39HW925K_JQv0pqweHnZry4gxiFVT-T4h8qduqa-0yjEvoopqqHFlGw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1ee6db6f-57c0-6402-b713-f136baa7d393\",\r\n    \"disabled\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/personal-info-disabled",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"personal-info-disabled"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "personal_info_delete_subscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2OTc2MzQxODAsImV4cCI6MTY5NzY3NzM4MCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOiIxZWU2ZGI2OS0yMzcxLTY2NTItYjcxZC05NzBmNGMwMDYzMTIiLCJuYW1lIjoiRWJlciIsImxhc3RuYW1lIjoiQmxhbmNvIiwiaW1hZ2UiOm51bGwsImVtYWlsIjoiZWJlcmouYmxhbmNvQGdtYWlsLmNvbSJ9.VfKqzr71r24Ggx3XLIFVZ8tabHcMJgEfVDFH0GKFb_U3IquAuwZfggIXl-PPv8Y4Cwa0TWcnGZitGJ1v4N0gnYcyEsgpokadcCeBh53Kr6R66F94wfX4whGbBP3jxl_dMW97FYD-AR4Hh8uHuWtnyux-64UgijVJqCXGKGtm4xVVfV_gHiryRr53hIOGG8e812GyRHEkD2GjFLqiq6ojfqi2qlVS6CxGDj7o5qbFqPaQaE0LAC-9sLutvikH1nTVzRGmk_QBCny6kcbbZQ-cd6a4zePqiYJFP9Eq40ipVGyYFDRr3URoy-5cikSnRvkslU0X_5B7twCKPTq10pMkMQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/personal-info-delete-subscription",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"personal-info-delete-subscription"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sons",
+			"item": [
+				{
+					"name": "sons_add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODI2ODI1MTMsImV4cCI6MTY4MjcyNTcxMywicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.G8-xxYPFiNDX80tPzTW23CECesnDj9sMWurH6N1dUldC2gqYXHXg75b65O5TvuEKF9Mgg_LsVnn9DzoBzWyeUn_Ue0ttxsU5l3I2moeVUbsHVuJ3RuBm94fgP2hDGjeTz2WJqOLxpsWs-ppP_ZeZdpNniF3tcl2QkxnWaMLtrdTBhprEud8ueF3hN48-DaVDqyKBInjbnYH4IO0R84BBOrDahgN0Ss4GKw3DeI29XTVK7cBM0NQnMbScAkmO7sLepJQUkVb1h4qUJEZp4ItYXGzgFk0FJj9WL0nc08IBVIzCj0fZBAm2Za_9uSJ5ysyFlWyRtZHRb9i3pUCr1AygkQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"sdfsdf\",\r\n    \"persona_information_id\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/sons",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"sons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sons_get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODI2ODI1MTMsImV4cCI6MTY4MjcyNTcxMywicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.G8-xxYPFiNDX80tPzTW23CECesnDj9sMWurH6N1dUldC2gqYXHXg75b65O5TvuEKF9Mgg_LsVnn9DzoBzWyeUn_Ue0ttxsU5l3I2moeVUbsHVuJ3RuBm94fgP2hDGjeTz2WJqOLxpsWs-ppP_ZeZdpNniF3tcl2QkxnWaMLtrdTBhprEud8ueF3hN48-DaVDqyKBInjbnYH4IO0R84BBOrDahgN0Ss4GKw3DeI29XTVK7cBM0NQnMbScAkmO7sLepJQUkVb1h4qUJEZp4ItYXGzgFk0FJj9WL0nc08IBVIzCj0fZBAm2Za_9uSJ5ysyFlWyRtZHRb9i3pUCr1AygkQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"persona_information_id\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/sons",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"sons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sons_edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODI2ODI1MTMsImV4cCI6MTY4MjcyNTcxMywicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.G8-xxYPFiNDX80tPzTW23CECesnDj9sMWurH6N1dUldC2gqYXHXg75b65O5TvuEKF9Mgg_LsVnn9DzoBzWyeUn_Ue0ttxsU5l3I2moeVUbsHVuJ3RuBm94fgP2hDGjeTz2WJqOLxpsWs-ppP_ZeZdpNniF3tcl2QkxnWaMLtrdTBhprEud8ueF3hN48-DaVDqyKBInjbnYH4IO0R84BBOrDahgN0Ss4GKw3DeI29XTVK7cBM0NQnMbScAkmO7sLepJQUkVb1h4qUJEZp4ItYXGzgFk0FJj9WL0nc08IBVIzCj0fZBAm2Za_9uSJ5ysyFlWyRtZHRb9i3pUCr1AygkQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"name\":\"xxxxxxxxxxxxxxxxxxx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/sonse",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"sonse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sons_delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODI2ODI1MTMsImV4cCI6MTY4MjcyNTcxMywicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.G8-xxYPFiNDX80tPzTW23CECesnDj9sMWurH6N1dUldC2gqYXHXg75b65O5TvuEKF9Mgg_LsVnn9DzoBzWyeUn_Ue0ttxsU5l3I2moeVUbsHVuJ3RuBm94fgP2hDGjeTz2WJqOLxpsWs-ppP_ZeZdpNniF3tcl2QkxnWaMLtrdTBhprEud8ueF3hN48-DaVDqyKBInjbnYH4IO0R84BBOrDahgN0Ss4GKw3DeI29XTVK7cBM0NQnMbScAkmO7sLepJQUkVb1h4qUJEZp4ItYXGzgFk0FJj9WL0nc08IBVIzCj0fZBAm2Za_9uSJ5ysyFlWyRtZHRb9i3pUCr1AygkQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/sons",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"sons"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BookMemories",
+			"item": [
+				{
+					"name": "book_memories_add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTAxNTgwOTUsImV4cCI6MTcxMDIwMTI5NSwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VyX2lkIjoiMWVlZGFlNmQtNjQ0Mi02YTlhLTgyOTQtYmZiMDgzYTBhMjkzIiwibmFtZSI6IkViZXIiLCJsYXN0bmFtZSI6IkJsYW5jbyIsImltYWdlIjpudWxsLCJlbWFpbCI6ImViZXJqLmJsYW5jb0BnbWFpbC5jb20ifQ.2FVw6izxjM9zdOBnwKmj5QPpI8NmuQICDiIRqHhbOun1h4WfnJc2APmVAUDKXQv1G9chjll24NDYHFXCumJBXCULgw4z3Py15dOFGwz7frUZj0OGNRUhYxhhOHKoceqVSm1IaaQ_Ha-CNy9kpf7E19ypcepb2IBFWxSUYgieUJ8uKeEw8LxmmplCTZ1kDwKVtTSdI3KPNvKYR-ogJ6To_PzgZCvNYixXhLpP-S5Jo0MJU3UG8-2Bj5TcSsK8MVtPMY_wyAfYY1CBtZx3zxukSZf1Wix0MI1V41DCCsloIF-7wIq2yCQf_ubu4Ya4K_sBTys17SqGHJe0plTrUKNE0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "message",
+									"value": "messagegg",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "name",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "last_name",
+									"value": "lastname",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "phone",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/eberj/Pictures/1947456.jpg",
+									"disabled": true
+								},
+								{
+									"key": "personal_information_id",
+									"value": "1eedae7e-0583-6e62-8fd6-9b677c8421f2",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"value": "1eedae7c-3e03-630c-b91b-352ef12cfec9",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "eberj.blanco@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "notification_anual",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "notification_new_post",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "+34",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "url",
+									"value": "www.google.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "locale",
+									"value": "en-us",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/es/book-memories",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"book-memories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "book_memories_get",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTAxNTgwOTUsImV4cCI6MTcxMDIwMTI5NSwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VyX2lkIjoiMWVlZGFlNmQtNjQ0Mi02YTlhLTgyOTQtYmZiMDgzYTBhMjkzIiwibmFtZSI6IkViZXIiLCJsYXN0bmFtZSI6IkJsYW5jbyIsImltYWdlIjpudWxsLCJlbWFpbCI6ImViZXJqLmJsYW5jb0BnbWFpbC5jb20ifQ.2FVw6izxjM9zdOBnwKmj5QPpI8NmuQICDiIRqHhbOun1h4WfnJc2APmVAUDKXQv1G9chjll24NDYHFXCumJBXCULgw4z3Py15dOFGwz7frUZj0OGNRUhYxhhOHKoceqVSm1IaaQ_Ha-CNy9kpf7E19ypcepb2IBFWxSUYgieUJ8uKeEw8LxmmplCTZ1kDwKVtTSdI3KPNvKYR-ogJ6To_PzgZCvNYixXhLpP-S5Jo0MJU3UG8-2Bj5TcSsK8MVtPMY_wyAfYY1CBtZx3zxukSZf1Wix0MI1V41DCCsloIF-7wIq2yCQf_ubu4Ya4K_sBTys17SqGHJe0plTrUKNE0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ruta}}/es/book-memories",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"book-memories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "book_memories_edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MDk2Mzk2MDYsImV4cCI6MTcwOTY4MjgwNiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOiIxZWVkYWU2ZC02NDQyLTZhOWEtODI5NC1iZmIwODNhMGEyOTMiLCJuYW1lIjoiRWJlciIsImxhc3RuYW1lIjoiQmxhbmNvIiwiaW1hZ2UiOm51bGwsImVtYWlsIjoiZWJlcmouYmxhbmNvQGdtYWlsLmNvbSJ9.dC_hyF5BwSd4wgcV5UGhhPE9i-g-VxIVX44yUSJEpMZflBHEtjQ8KBfLr_Q7bajqkVoK9hMha-lB-uNpwdhhid1Qdpe5TakoFr0h5qT5XVbqHRsK63jIKq13nOg8SF0dStuYW9IHNq9z74TXnC_rhZO2AzkwIfRYEIlrLYhU6RSx_PKkW3NUH6cSABuYOmOtRJKn8pJcgRJIFrdbt0lggrzv4KCKf9QwVBfDQHYhY1Dzh5ZfODjiVqT-Owx_-fpuyhDCV8vVnpTerWP7q9AeuXNewSncF0Xw5SrCkIvxYb00ph2bdaDwxEXnvkhXlixyoufJutbBiMoTuzLae8QzKw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1eedaed2-5348-65fe-a5f7-53ecfbec5914",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "xxx",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "name",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "lastname",
+									"value": "lastname",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "phone",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "notification",
+									"value": "false",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/eberj/Pictures/1947456.jpg",
+									"disabled": true
+								},
+								{
+									"key": "locale",
+									"value": "un-un",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/es/book-memories",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"book-memories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "book_memories_delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2OTA4MDQxMjAsImV4cCI6MTY5MDg0NzMyMCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOjEsIm5hbWUiOiJFYmVyIiwibGFzdG5hbWUiOiJCbGFuY28iLCJpbWFnZSI6bnVsbCwiZW1haWwiOiJlYmVyai5ibGFuY29AZ21haWwuY29tIn0.v72EODIZXA2tLheZF_zSQtdiEA3EzjThskt9D5Ma1rI6UO9xI5qHtmLvE09gkmniaF0dkgDeQiQuFqJMkfuHQ-JdLQkT4BJ3s-C3xCbmR402U0-gynO8pdUKwnie6iklg-x_LycWInzv2Nyqt-0uxNKgeN9d_7X6XhfVzeuPq2J38vY1VWnFIttyr_vj5RB4Nh0JM--o8ro8mFJomRM6bH_GGymFONn780xEd0Q5ZOTbHXoNgGkg5G3ieGwpcI21mADVc4Gom5VbkE9WPCxe1VGyzAFLb7la26TC0fzVWBV4cB95bOBm0vi7s8I8y1o04z5KkW42Z7v_pjPKMXPiTQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"book_memories_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/book-memories",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"book-memories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "book-memories-validate-code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"eberj.blanco@gmail.com\",\r\n    \"code\" : \"512428\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/book-memories-validate-code",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"book-memories-validate-code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "book_memories_approve",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2OTc4MDM2OTUsImV4cCI6MTY5Nzg0Njg5NSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOiIxZWU2ZGI2OS0yMzcxLTY2NTItYjcxZC05NzBmNGMwMDYzMTIiLCJuYW1lIjoiRWJlciIsImxhc3RuYW1lIjoiQmxhbmNvIiwiaW1hZ2UiOm51bGwsImVtYWlsIjoiZWJlcmouYmxhbmNvQGdtYWlsLmNvbSJ9.wkS09YWhHJYw2wC1LL_9re0hU43Wy4iVSN6b7YOO0gmYWWIehFZTlj1sbo6vlyBqJ1xW9LmgnSIli_PSQXqi2YZA4HXjbtZBhc49T9LcgTygzwrFkPRLKm6TlxguuGvwiOxlEUKV809QbfDEbvUfh5PG0bCsnKBvlxpPd8Cp8BJNe3LtrX5IV1jCwwt2LEqYkmK_75kVzjHYOWOGeCCN7V2YXU1vv4zzPDpQo_ACJnheiNj1mgeAdEyU6kOipP2t4m9YVrGwPtBBKrgcN39LCLYCRLEq0nQrc11spfWWFt9KDeSe63yk2FSNKiewIHjLw5JlWvALMFt4LnUtVjwvNA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"book_memories_id\" : \"1ee6f425-5c1a-6790-b8f9-89e0cbfb82d0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/book-memories-approve",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"book-memories-approve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "book_memories_refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"eberj.blanco@gmail.com\",\r\n    \"name\" :\"eber\",\r\n    \"last_name\" : \"blanco\",\r\n    \"personal_information_id\" : \"1\",\r\n    \"code\" : \"+34\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/book-memories-refresh-code",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"book-memories-refresh-code"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Icon",
+			"item": [
+				{
+					"name": "icon_add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTAxNTkwMzMsImV4cCI6MTcxMDIwMjIzMywicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VyX2lkIjoiMWVlZDU4N2QtZjMzNS02MGY0LTlkZmUtYzFjZTVmODE0NzY5IiwibmFtZSI6IkViZXIiLCJsYXN0bmFtZSI6IkJsYW5jbyIsImltYWdlIjpudWxsLCJlbWFpbCI6ImViZXJqLmJsYW5jb0BnbWFpbC5jb20ifQ.tv9QjbLP4DYaAWmdPmSduXBkWX8FpdjLls_ovqw2B7XCfupTiiu1ohyeco4EGMyh6ngNLLSHp2ZUQGq7R3G6OvUaTeolOimLNT1f035PUy074UIP8GIklnwKOGP1M0JOMtQZ6IlcdWdpVpc0OuB1tpG2bpCZJl5FKpXio3YiG7ZBBHP6OqB-XejhgSjLlsCaVHPSkRmFIYJwzBmPu__z45dCzmGgDgpvbEv0x8arP4eq7ohIUh4Fc6CrlQo3jor4Y04zO-J0S7d2ZXb3mo4Q40rzLWzihEyA33cd4sLCE4rvGo8PM9hi-wlBRBO8mcpo7HZigHHZhjb9i4oql02E0Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/eberj/Downloads/IsologoMemorial.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/es/icon",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"icon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "icon_get",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ruta}}/{{locale}}/free/icon",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"{{locale}}",
+								"free",
+								"icon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "icon_edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM2MzUxMjgsImV4cCI6MTY4MzY3ODMyOCwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.kY8cwRSLeRD4k6SaJEx8t0dhS5DbbfanjTqye1qcuMXVks8u79KYBQciTOcDVkuuiz6i3muGALK7q6M3Ga3vBisQZXhTbO8AQaQOEQx8U-wP3x6pgXsEBpSj1OBE0RycsoKsOKsWvz-GfaSswEAfbCiIcFNb-eO2YZRqKcgulhTQxiN3YvAG_t9kD0cSCBeleUdq-NpMllS53tyxckfr5zrbwNHz_mZbzpXUDZ2CP6vMNjGV5GV40cTrKBVs8HGXqPYFhgy4z1h3g4hLt2gQElhTcT1u2kS0crqpohIOTe7Ud4mZcUJHq0_1-MTpAN1Vl5ixhqKPyl1i9eycowYhcQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "vvvvv",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/laragon/www/docker/Memorial/docs/cementerio virtual.pdf",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/es/icone",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"icone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "icon_delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM2MzUxMjgsImV4cCI6MTY4MzY3ODMyOCwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.kY8cwRSLeRD4k6SaJEx8t0dhS5DbbfanjTqye1qcuMXVks8u79KYBQciTOcDVkuuiz6i3muGALK7q6M3Ga3vBisQZXhTbO8AQaQOEQx8U-wP3x6pgXsEBpSj1OBE0RycsoKsOKsWvz-GfaSswEAfbCiIcFNb-eO2YZRqKcgulhTQxiN3YvAG_t9kD0cSCBeleUdq-NpMllS53tyxckfr5zrbwNHz_mZbzpXUDZ2CP6vMNjGV5GV40cTrKBVs8HGXqPYFhgy4z1h3g4hLt2gQElhTcT1u2kS0crqpohIOTe7Ud4mZcUJHq0_1-MTpAN1Vl5ixhqKPyl1i9eycowYhcQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/icon",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"icon"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gifs",
+			"item": [
+				{
+					"name": "gif_add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2OTUyMTY1MDgsImV4cCI6MTY5NTI1OTcwOCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOiIxZWU1N2I5NS1lMzU4LTYzZTItYTdiMy1mNzY2MjQwYWMzZDYiLCJuYW1lIjoiRWJlciIsImxhc3RuYW1lIjoiQmxhbmNvIiwiaW1hZ2UiOm51bGwsImVtYWlsIjoiZWJlcmouYmxhbmNvQGdtYWlsLmNvbSJ9.cp_kE7Mt_V5wN7skaiMjpUN06e5UV7SrIZ4jhfNnB2jVJhEmRbd5Aifl9mDC8r2aSrj-u6R4zJrIPOsk7wD7ePOLPVtrR4Q4FlO2YeWF4O1u3a9VG48-5TEDSb0W_hYNJrR_Vg2YVVPBUVDZECrF4Cq99nj1TJT1UNhlxRX0NULxwlmI6gh4JBmFYZl3Ozq1AoXjh_ZrOLakyZXTDQVFb9Y-gnpU1iGy4vXHDJWO3W_XPRYFEAY9JkMM6J92IkQuRpDcWIVH0BcBC2KuxNPJZYB3xKiJAacxqBRMT_5UbwhQzoG_2lvbi9VrvD-OkGHDkUry-xgvo6wSITLC7gV39Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "candle-dark",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/eberj/Desktop/Archivo comprimido/candle-dark.gif"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/es/gifs",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"gifs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gif_edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM1NDgwODIsImV4cCI6MTY4MzU5MTI4Miwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.vqa5t73LyRFe9aQjLWL1qlUPE4xXgPbZMr9alVkQsFmwPtv9EO2hF-14u__YK0nBPD7HewHSyMXnAPdxDap0xjOMoR80WqwI-qVGRG2122TSO4voy0E-2swSt_utQNXiDzcEtX3TrEUc5lX38NgIRyFS6N2_8QFPu3J0yCetb0PM40iRlmnRjOuTXB9PHYEAwSUvfdMpuD79MKiEnZeuyCcbh-MkbZPNGLF5Xf10niHtHZDSoiRvRl40IQt3NxxsjnvOnHRjjghphGUdEapUROh6eObBDOHn2pvCl_Mwm08z46EZyMI6XX3UE3tZuYs8vgxfdWyhKpzn144pZWNytw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "888",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/es/gifse",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"gifse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gif_get",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ruta}}/es/free/gifs?page=1&rows=100",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"free",
+								"gifs"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "rows",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gif_delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM1NDgwODIsImV4cCI6MTY4MzU5MTI4Miwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.vqa5t73LyRFe9aQjLWL1qlUPE4xXgPbZMr9alVkQsFmwPtv9EO2hF-14u__YK0nBPD7HewHSyMXnAPdxDap0xjOMoR80WqwI-qVGRG2122TSO4voy0E-2swSt_utQNXiDzcEtX3TrEUc5lX38NgIRyFS6N2_8QFPu3J0yCetb0PM40iRlmnRjOuTXB9PHYEAwSUvfdMpuD79MKiEnZeuyCcbh-MkbZPNGLF5Xf10niHtHZDSoiRvRl40IQt3NxxsjnvOnHRjjghphGUdEapUROh6eObBDOHn2pvCl_Mwm08z46EZyMI6XX3UE3tZuYs8vgxfdWyhKpzn144pZWNytw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/gifs",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"gifs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gift_PersonalInformation",
+			"item": [
+				{
+					"name": "gifs_personalinfo_add",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"personal_information_id\": \"1eec5d01-d477-6108-a556-d7dbe507ea80\",\r\n    \"gifs_id\": \"1eec5cfe-fd1a-6d6a-a39f-9f1b217f6aa6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/free/gifs-personal-info",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"free",
+								"gifs-personal-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gifs_personalinfo_edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODI2ODI1MTMsImV4cCI6MTY4MjcyNTcxMywicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.G8-xxYPFiNDX80tPzTW23CECesnDj9sMWurH6N1dUldC2gqYXHXg75b65O5TvuEKF9Mgg_LsVnn9DzoBzWyeUn_Ue0ttxsU5l3I2moeVUbsHVuJ3RuBm94fgP2hDGjeTz2WJqOLxpsWs-ppP_ZeZdpNniF3tcl2QkxnWaMLtrdTBhprEud8ueF3hN48-DaVDqyKBInjbnYH4IO0R84BBOrDahgN0Ss4GKw3DeI29XTVK7cBM0NQnMbScAkmO7sLepJQUkVb1h4qUJEZp4ItYXGzgFk0FJj9WL0nc08IBVIzCj0fZBAm2Za_9uSJ5ysyFlWyRtZHRb9i3pUCr1AygkQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 1,\r\n    \"expired\" : \"2023-12-31\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/gifsPersonalInfoe",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"gifsPersonalInfoe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gifs_personalInfo_get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MDczMjA5NzMsImV4cCI6MTcwNzM2NDE3Mywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOiIxZWVjNWNmZi05Njc3LTY5ZjQtYmM3YS1mMWI2MDNmNjc4ZTYiLCJuYW1lIjoiRWJlciIsImxhc3RuYW1lIjoiQmxhbmNvIiwiaW1hZ2UiOm51bGwsImVtYWlsIjoiZWJlcmouYmxhbmNvQGdtYWlsLmNvbSJ9.hyKZACTi1KIApDkmqf8qGVMHXNPsdSOhB6--HOwdmpfwVPwMgzQaILjzVM89-FARUpmWByHEBlLaaBDWSyJtTjVahJlNQCPPyHjVFk1H7_mhHFylUfSIZX8ofgWSDT0d573TeicqYX4knuKwikZVBEGsbjo97dI6hcAIBu5bJwGS0l__e7VOs-wSu8-6dtSdrfj8lHCJb-VZEii_Omb8nERCUWt6NqjKFuWx3m224QH_Brv0P21RcTD02CCbZpKOBuTOv7zAdqx2u-sgyHjyyNkCz8qBLx0cyw-3BCdRq7ptTxZegJ5OFbJShXJHU1ILT4CjAhm_tGlEJ7ig0jtw9A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/{{locale}}/gifs-personal-info",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"{{locale}}",
+								"gifs-personal-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gifs_delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODI2ODI1MTMsImV4cCI6MTY4MjcyNTcxMywicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.G8-xxYPFiNDX80tPzTW23CECesnDj9sMWurH6N1dUldC2gqYXHXg75b65O5TvuEKF9Mgg_LsVnn9DzoBzWyeUn_Ue0ttxsU5l3I2moeVUbsHVuJ3RuBm94fgP2hDGjeTz2WJqOLxpsWs-ppP_ZeZdpNniF3tcl2QkxnWaMLtrdTBhprEud8ueF3hN48-DaVDqyKBInjbnYH4IO0R84BBOrDahgN0Ss4GKw3DeI29XTVK7cBM0NQnMbScAkmO7sLepJQUkVb1h4qUJEZp4ItYXGzgFk0FJj9WL0nc08IBVIzCj0fZBAm2Za_9uSJ5ysyFlWyRtZHRb9i3pUCr1AygkQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/gifsPersonalInfo",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"gifsPersonalInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gifs_personal_info_validate_code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"1ee79d2c-bdf2-6a98-82cc-895bd3796001\",\r\n    \"email\" : \"eberj.blanco@gmail.com\",\r\n    \"code\" : \"539281\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/free/gifs-personal-info-validate-code",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"free",
+								"gifs-personal-info-validate-code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gifs_personal_info_refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"eberj.blanco@gmail.com\",\r\n    \"name\" :\"eber\",\r\n    \"last_name\" : \"blanco\",\r\n    \"personal_information_id\" : \"1ee77ec1-5193-63c2-ae22-b5f8615a7bd4\",\r\n    \"code\" : \"+34\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/free/gifs-personal-info-refresh-code",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"free",
+								"gifs-personal-info-refresh-code"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Photo",
+			"item": [
+				{
+					"name": "photo_add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM4MDgwMjksImV4cCI6MTY4Mzg1MTIyOSwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.JrV2Z05826s_DzwXHUNlrkOEcGc-5L1alTQ5TH2T8Ewj4C4UXRhtxyKMxGx3a8flSCHAuNB7hrL_MDeGrRq4Dggt1GCb2Ovs7DUmCLs8q21zlvrFlvTlYB361q1J2BDcz8Sixyz-edjboyw8AqDS6jIt6c47puZSuGItJevYy1RknO3yW0ibCpv8jgGK_nzAfefohoxfytQ-S82Gpdrju6z5kz49AR9nkQuM41B4FsbhAwvXgZMcq6zBXpPDZ-JM5izR8oHhRpfu4vWvXa8vEJCaB589T8bBduAcrUrO3duL9wnEs0RTt7__rITBsf3HRWBieWGgUG4cXTioowYYrg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "qweqweqw",
+									"type": "text"
+								},
+								{
+									"key": "personal_information_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/laragon/www/docker/Memorial/docs/cementerio virtual.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/es/photo",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"photo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "photo_edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM4MDgwMjksImV4cCI6MTY4Mzg1MTIyOSwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.JrV2Z05826s_DzwXHUNlrkOEcGc-5L1alTQ5TH2T8Ewj4C4UXRhtxyKMxGx3a8flSCHAuNB7hrL_MDeGrRq4Dggt1GCb2Ovs7DUmCLs8q21zlvrFlvTlYB361q1J2BDcz8Sixyz-edjboyw8AqDS6jIt6c47puZSuGItJevYy1RknO3yW0ibCpv8jgGK_nzAfefohoxfytQ-S82Gpdrju6z5kz49AR9nkQuM41B4FsbhAwvXgZMcq6zBXpPDZ-JM5izR8oHhRpfu4vWvXa8vEJCaB589T8bBduAcrUrO3duL9wnEs0RTt7__rITBsf3HRWBieWGgUG4cXTioowYYrg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"name\" : \"xxx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/photoe",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"photoe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "photo_get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2OTQwODc5NTQsImV4cCI6MTY5NDEzMTE1NCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOjksIm5hbWUiOiJFYmVyIiwibGFzdG5hbWUiOiJCbGFuY28iLCJpbWFnZSI6bnVsbCwiZW1haWwiOiJlYmVyai5ibGFuY29AZ21haWwuY29tIn0.JiJn2w_WHNiTZuY6BKE-TTM61ApaPAbUGziEG2XAKta1wN0K0slIVdFlpRwxUYp-AZtDe5WyZQCuv-EtsFDaXUaJQCmHTaAMaacXTHWaMo_Et01Gay2ozv72J9bc6QfULWJJdLv8W2Rh-jRMAJPj1SVOchH7wFr__f88NrMmK4aO-vNwlzOIbTN7ZEcVR-zgSnpRxArcpM8Zovv7pTeCfuu_OkKeMF3onenuSPuVrinLTpZ34PJFFlSM4K-tl7hMbTc6emwMOfVniHp1Y9OVBl05t2eml8wSR_kYKT7_tIfmcsnsbDxnmdDxznjdoDfUzbU_KiCEagPpZOa-Gpif-w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/photo",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"photo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "photo_delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM4MDgwMjksImV4cCI6MTY4Mzg1MTIyOSwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.JrV2Z05826s_DzwXHUNlrkOEcGc-5L1alTQ5TH2T8Ewj4C4UXRhtxyKMxGx3a8flSCHAuNB7hrL_MDeGrRq4Dggt1GCb2Ovs7DUmCLs8q21zlvrFlvTlYB361q1J2BDcz8Sixyz-edjboyw8AqDS6jIt6c47puZSuGItJevYy1RknO3yW0ibCpv8jgGK_nzAfefohoxfytQ-S82Gpdrju6z5kz49AR9nkQuM41B4FsbhAwvXgZMcq6zBXpPDZ-JM5izR8oHhRpfu4vWvXa8vEJCaB589T8bBduAcrUrO3duL9wnEs0RTt7__rITBsf3HRWBieWGgUG4cXTioowYYrg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/photo",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"photo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Configuration",
+			"item": [
+				{
+					"name": "configuration_add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM1NDgwODIsImV4cCI6MTY4MzU5MTI4Miwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.vqa5t73LyRFe9aQjLWL1qlUPE4xXgPbZMr9alVkQsFmwPtv9EO2hF-14u__YK0nBPD7HewHSyMXnAPdxDap0xjOMoR80WqwI-qVGRG2122TSO4voy0E-2swSt_utQNXiDzcEtX3TrEUc5lX38NgIRyFS6N2_8QFPu3J0yCetb0PM40iRlmnRjOuTXB9PHYEAwSUvfdMpuD79MKiEnZeuyCcbh-MkbZPNGLF5Xf10niHtHZDSoiRvRl40IQt3NxxsjnvOnHRjjghphGUdEapUROh6eObBDOHn2pvCl_Mwm08z46EZyMI6XX3UE3tZuYs8vgxfdWyhKpzn144pZWNytw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"freeDays\",\r\n    \"value\":30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/configuration",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"configuration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "configuration_edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM1NDgwODIsImV4cCI6MTY4MzU5MTI4Miwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.vqa5t73LyRFe9aQjLWL1qlUPE4xXgPbZMr9alVkQsFmwPtv9EO2hF-14u__YK0nBPD7HewHSyMXnAPdxDap0xjOMoR80WqwI-qVGRG2122TSO4voy0E-2swSt_utQNXiDzcEtX3TrEUc5lX38NgIRyFS6N2_8QFPu3J0yCetb0PM40iRlmnRjOuTXB9PHYEAwSUvfdMpuD79MKiEnZeuyCcbh-MkbZPNGLF5Xf10niHtHZDSoiRvRl40IQt3NxxsjnvOnHRjjghphGUdEapUROh6eObBDOHn2pvCl_Mwm08z46EZyMI6XX3UE3tZuYs8vgxfdWyhKpzn144pZWNytw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"name\": \"yyy\",\r\n    \"value\":3000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/configuratione",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"configuratione"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "configuration_get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM1NDgwODIsImV4cCI6MTY4MzU5MTI4Miwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.vqa5t73LyRFe9aQjLWL1qlUPE4xXgPbZMr9alVkQsFmwPtv9EO2hF-14u__YK0nBPD7HewHSyMXnAPdxDap0xjOMoR80WqwI-qVGRG2122TSO4voy0E-2swSt_utQNXiDzcEtX3TrEUc5lX38NgIRyFS6N2_8QFPu3J0yCetb0PM40iRlmnRjOuTXB9PHYEAwSUvfdMpuD79MKiEnZeuyCcbh-MkbZPNGLF5Xf10niHtHZDSoiRvRl40IQt3NxxsjnvOnHRjjghphGUdEapUROh6eObBDOHn2pvCl_Mwm08z46EZyMI6XX3UE3tZuYs8vgxfdWyhKpzn144pZWNytw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"yyy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/configuration",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"configuration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "configuration_delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM1NDgwODIsImV4cCI6MTY4MzU5MTI4Miwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.vqa5t73LyRFe9aQjLWL1qlUPE4xXgPbZMr9alVkQsFmwPtv9EO2hF-14u__YK0nBPD7HewHSyMXnAPdxDap0xjOMoR80WqwI-qVGRG2122TSO4voy0E-2swSt_utQNXiDzcEtX3TrEUc5lX38NgIRyFS6N2_8QFPu3J0yCetb0PM40iRlmnRjOuTXB9PHYEAwSUvfdMpuD79MKiEnZeuyCcbh-MkbZPNGLF5Xf10niHtHZDSoiRvRl40IQt3NxxsjnvOnHRjjghphGUdEapUROh6eObBDOHn2pvCl_Mwm08z46EZyMI6XX3UE3tZuYs8vgxfdWyhKpzn144pZWNytw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/configuration",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"configuration"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DeathDocument",
+			"item": [
+				{
+					"name": "death_document_add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM1NDgwODIsImV4cCI6MTY4MzU5MTI4Miwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.vqa5t73LyRFe9aQjLWL1qlUPE4xXgPbZMr9alVkQsFmwPtv9EO2hF-14u__YK0nBPD7HewHSyMXnAPdxDap0xjOMoR80WqwI-qVGRG2122TSO4voy0E-2swSt_utQNXiDzcEtX3TrEUc5lX38NgIRyFS6N2_8QFPu3J0yCetb0PM40iRlmnRjOuTXB9PHYEAwSUvfdMpuD79MKiEnZeuyCcbh-MkbZPNGLF5Xf10niHtHZDSoiRvRl40IQt3NxxsjnvOnHRjjghphGUdEapUROh6eObBDOHn2pvCl_Mwm08z46EZyMI6XX3UE3tZuYs8vgxfdWyhKpzn144pZWNytw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "personal_information_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "document",
+									"type": "file",
+									"src": "/C:/laragon/www/docker/Memorial/docs/cementerio virtual.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/es/deathCertificate",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"deathCertificate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "death_document_get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM1NDgwODIsImV4cCI6MTY4MzU5MTI4Miwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.vqa5t73LyRFe9aQjLWL1qlUPE4xXgPbZMr9alVkQsFmwPtv9EO2hF-14u__YK0nBPD7HewHSyMXnAPdxDap0xjOMoR80WqwI-qVGRG2122TSO4voy0E-2swSt_utQNXiDzcEtX3TrEUc5lX38NgIRyFS6N2_8QFPu3J0yCetb0PM40iRlmnRjOuTXB9PHYEAwSUvfdMpuD79MKiEnZeuyCcbh-MkbZPNGLF5Xf10niHtHZDSoiRvRl40IQt3NxxsjnvOnHRjjghphGUdEapUROh6eObBDOHn2pvCl_Mwm08z46EZyMI6XX3UE3tZuYs8vgxfdWyhKpzn144pZWNytw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"personal_information_id\" : 30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/deathCertificate",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"deathCertificate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "death_document_delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM1NDgwODIsImV4cCI6MTY4MzU5MTI4Miwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.vqa5t73LyRFe9aQjLWL1qlUPE4xXgPbZMr9alVkQsFmwPtv9EO2hF-14u__YK0nBPD7HewHSyMXnAPdxDap0xjOMoR80WqwI-qVGRG2122TSO4voy0E-2swSt_utQNXiDzcEtX3TrEUc5lX38NgIRyFS6N2_8QFPu3J0yCetb0PM40iRlmnRjOuTXB9PHYEAwSUvfdMpuD79MKiEnZeuyCcbh-MkbZPNGLF5Xf10niHtHZDSoiRvRl40IQt3NxxsjnvOnHRjjghphGUdEapUROh6eObBDOHn2pvCl_Mwm08z46EZyMI6XX3UE3tZuYs8vgxfdWyhKpzn144pZWNytw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/deathCertificate",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"deathCertificate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Videos",
+			"item": [
+				{
+					"name": "videos_add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODMwMzYwNzgsImV4cCI6MTY4MzA3OTI3OCwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.xJzElu4dA4jNwttRjqS6eJLDHoBS8tME-mq5r6647hlOkJxOfv3cWMgNayo6eq4Ea4vBrQSgjkMZK7bQmh4tOFTE83gFC2MO38piLbso0094GZqrESIPX5zpZkgrN0fvSWid1y3Q0_pXTk-Suzja4SwPy5ChV3vwWvo0GhPNLcBN46t0cMBgj0og1cHJfEJ13nL3Bzvw98pja8umEx3VcKdD6nrmELFs-MqP-c8zpbBVGTzBHHFLC_B8mZdh1bNiJBErgh6OjWDproyLsY2ImpqzGTaj1Ob7dt9S70Cw_m-1JiooB5JUpOecMVHtEix9coIZ9NGoHpFsme3o9s3XYA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"type": "file",
+									"src": "/C:/Users/eberj/Pictures/1947456.jpg"
+								},
+								{
+									"key": "personal_information_id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/videos",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"videos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "videos_get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODMwMzYwNzgsImV4cCI6MTY4MzA3OTI3OCwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.xJzElu4dA4jNwttRjqS6eJLDHoBS8tME-mq5r6647hlOkJxOfv3cWMgNayo6eq4Ea4vBrQSgjkMZK7bQmh4tOFTE83gFC2MO38piLbso0094GZqrESIPX5zpZkgrN0fvSWid1y3Q0_pXTk-Suzja4SwPy5ChV3vwWvo0GhPNLcBN46t0cMBgj0og1cHJfEJ13nL3Bzvw98pja8umEx3VcKdD6nrmELFs-MqP-c8zpbBVGTzBHHFLC_B8mZdh1bNiJBErgh6OjWDproyLsY2ImpqzGTaj1Ob7dt9S70Cw_m-1JiooB5JUpOecMVHtEix9coIZ9NGoHpFsme3o9s3XYA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"personal_information_id\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/videos",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"videos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "videos_delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODMwMzYwNzgsImV4cCI6MTY4MzA3OTI3OCwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.xJzElu4dA4jNwttRjqS6eJLDHoBS8tME-mq5r6647hlOkJxOfv3cWMgNayo6eq4Ea4vBrQSgjkMZK7bQmh4tOFTE83gFC2MO38piLbso0094GZqrESIPX5zpZkgrN0fvSWid1y3Q0_pXTk-Suzja4SwPy5ChV3vwWvo0GhPNLcBN46t0cMBgj0og1cHJfEJ13nL3Bzvw98pja8umEx3VcKdD6nrmELFs-MqP-c8zpbBVGTzBHHFLC_B8mZdh1bNiJBErgh6OjWDproyLsY2ImpqzGTaj1Ob7dt9S70Cw_m-1JiooB5JUpOecMVHtEix9coIZ9NGoHpFsme3o9s3XYA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/videos",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"videos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Line",
+			"item": [
+				{
+					"name": "line_add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM2MzUxMjgsImV4cCI6MTY4MzY3ODMyOCwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.kY8cwRSLeRD4k6SaJEx8t0dhS5DbbfanjTqye1qcuMXVks8u79KYBQciTOcDVkuuiz6i3muGALK7q6M3Ga3vBisQZXhTbO8AQaQOEQx8U-wP3x6pgXsEBpSj1OBE0RycsoKsOKsWvz-GfaSswEAfbCiIcFNb-eO2YZRqKcgulhTQxiN3YvAG_t9kD0cSCBeleUdq-NpMllS53tyxckfr5zrbwNHz_mZbzpXUDZ2CP6vMNjGV5GV40cTrKBVs8HGXqPYFhgy4z1h3g4hLt2gQElhTcT1u2kS0crqpohIOTe7Ud4mZcUJHq0_1-MTpAN1Vl5ixhqKPyl1i9eycowYhcQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "persona_information_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "sdfsdfsfd",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2023-01-01",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/laragon/www/docker/Memorial/docs/cementerio virtual.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/es/lineLive",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"lineLive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "line_get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM2MzUxMjgsImV4cCI6MTY4MzY3ODMyOCwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.kY8cwRSLeRD4k6SaJEx8t0dhS5DbbfanjTqye1qcuMXVks8u79KYBQciTOcDVkuuiz6i3muGALK7q6M3Ga3vBisQZXhTbO8AQaQOEQx8U-wP3x6pgXsEBpSj1OBE0RycsoKsOKsWvz-GfaSswEAfbCiIcFNb-eO2YZRqKcgulhTQxiN3YvAG_t9kD0cSCBeleUdq-NpMllS53tyxckfr5zrbwNHz_mZbzpXUDZ2CP6vMNjGV5GV40cTrKBVs8HGXqPYFhgy4z1h3g4hLt2gQElhTcT1u2kS0crqpohIOTe7Ud4mZcUJHq0_1-MTpAN1Vl5ixhqKPyl1i9eycowYhcQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"personal_information_id\":30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/lineLive",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"lineLive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "line_edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM2MzUxMjgsImV4cCI6MTY4MzY3ODMyOCwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.kY8cwRSLeRD4k6SaJEx8t0dhS5DbbfanjTqye1qcuMXVks8u79KYBQciTOcDVkuuiz6i3muGALK7q6M3Ga3vBisQZXhTbO8AQaQOEQx8U-wP3x6pgXsEBpSj1OBE0RycsoKsOKsWvz-GfaSswEAfbCiIcFNb-eO2YZRqKcgulhTQxiN3YvAG_t9kD0cSCBeleUdq-NpMllS53tyxckfr5zrbwNHz_mZbzpXUDZ2CP6vMNjGV5GV40cTrKBVs8HGXqPYFhgy4z1h3g4hLt2gQElhTcT1u2kS0crqpohIOTe7Ud4mZcUJHq0_1-MTpAN1Vl5ixhqKPyl1i9eycowYhcQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "xxx",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2023-12-01",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/es/lineLivee",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"lineLivee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "line_delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2ODM2MzUxMjgsImV4cCI6MTY4MzY3ODMyOCwicm9sZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiIsIlJPTEVfU1VQRVJfQURNSU4iXSwiZW1haWwiOiJ0ZXN0QHRlc3QifQ.kY8cwRSLeRD4k6SaJEx8t0dhS5DbbfanjTqye1qcuMXVks8u79KYBQciTOcDVkuuiz6i3muGALK7q6M3Ga3vBisQZXhTbO8AQaQOEQx8U-wP3x6pgXsEBpSj1OBE0RycsoKsOKsWvz-GfaSswEAfbCiIcFNb-eO2YZRqKcgulhTQxiN3YvAG_t9kD0cSCBeleUdq-NpMllS53tyxckfr5zrbwNHz_mZbzpXUDZ2CP6vMNjGV5GV40cTrKBVs8HGXqPYFhgy4z1h3g4hLt2gQElhTcT1u2kS0crqpohIOTe7Ud4mZcUJHq0_1-MTpAN1Vl5ixhqKPyl1i9eycowYhcQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/lineLive",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"lineLive"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OTP",
+			"item": [
+				{
+					"name": "get_OTP",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@test.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/otp",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post_OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"eberj.blanco@gmail.com\",\r\n    \"code\":\"094744\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/otp",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"otp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stripe",
+			"item": [
+				{
+					"name": "webhook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/webhook-stripe",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"webhook-stripe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stripe_products_get",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ruta}}/{{locale}}/stripe-products",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"{{locale}}",
+								"stripe-products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_session_stripe_post",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_1\" : \"price_1NdZtJIZLV3rtDN8x0r2Ds7s\",\r\n    \"id_2\" : \"price_1NdZmvIZLV3rtDN8k1SO4fdH\",\r\n    //si el usuario perdio el token puede enviar el email\r\n    \"email\": \"eberj.blanco@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/create-session-stripe",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"create-session-stripe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subscription_stripe_get",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MDA1NzM1MTMsImV4cCI6MTcwMDYxNjcxMywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOiIxZWU3ZmNhMS1iNGEyLTZmYzItOTNhOS0zMzY1Zjc0MjExMGYiLCJuYW1lIjoiRWJlciIsImxhc3RuYW1lIjoiQmxhbmNvIiwiaW1hZ2UiOm51bGwsImVtYWlsIjoiZWJlcmouYmxhbmNvQGhvdG1haWwuY29tIn0.JIoHBjv8IQfQ2WBA3EdyYcX015_GfbbfHMpdJ6FTTKhCZS_vFUYG3Xn6aheV15IB4ZbYLnuSjpKVojmMmzg8g5ftEXM9PYLYDJNPnbsxat6ySz7PTtI6HsjHExqxTE8gGNf8jDhXWdQi5ncnTk9rpeKOnzVyP5AfRnxHISpT3xjaTiWJIlQUJV9NLNsm7fsnc4-Qvm_OfRMBiZwXMQIYzBAmVZmnhMYZnJsYzAhyHHNnR3ytmYsfKkHumyx-VXugBx7YuD8wRD1bS02VA5tbQX4-FceqnxbNT9cw8GaLlpS6kflFM8q1JU_8Jvo-NNcNqlgJzg9xV0GNFHNeLPay1g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ruta}}/es/subscription-stripe",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"subscription-stripe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subscription-stripe-delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2OTcwMzI5OTcsImV4cCI6MTY5NzA3NjE5Nywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOiIxZWU2NDUxZi03ZDMwLTY4NzItYTEwNS0wZmQ1OGRhZDNkNzYiLCJuYW1lIjoiRWJlciIsImxhc3RuYW1lIjoiQmxhbmNvIiwiaW1hZ2UiOm51bGwsImVtYWlsIjoiZWJlcmouYmxhbmNvQGdtYWlsLmNvbSJ9.EuEd8Zqww-xlI5oNzIIM61o44LHqs2Bat5x-Pu71DgpewUb6kdUPKP9zg0LbFfnGuEJel8DU03HltQ5oo2orNcm7ZEKQIQ-R5Ps3UFPjecUZ0rcBZnFsdhNOof9gO0fBWSDCpyI3LyTzsNMJjNweUn9W_lZG5Tri82gikxvcBu61TGC6n48D2a5LqaB_CzMImnEWhrYr11q_WBTSxjeNZEN3Yrm_jKjp9ZJXpMfAxz_Zov7fsCvxnowhSpGecAbWHgZ2AHOhpLLIh7HEMN88owlzHLdk1tuLqLw8uvejeahKY1WojTCvyGApSkRUX2ypbxi3X8cPgYQkL2KEhpLZRQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"1ee64521-97fc-6140-b273-61ea2a7af0c0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/es/subscription-stripe",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"subscription-stripe"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Country Code",
+			"item": [
+				{
+					"name": "country-code",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ruta}}/es/country-code",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"es",
+								"country-code"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FileS3",
+			"item": [
+				{
+					"name": "get_file_s3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ruta}}/{{locale}}/get-files-s3",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"{{locale}}",
+								"get-files-s3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contact",
+			"item": [
+				{
+					"name": "send-email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Eber\",\r\n    \"last_name\": \"Blanco\",\r\n    \"email\": \"eberj.blanco@gmail.com\",\r\n    \"message\": \"Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/{{locale}}/contact-send-email",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"{{locale}}",
+								"contact-send-email"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "requestFacebook",
+			"item": [
+				{
+					"name": "request_facebook_add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTAyNzI0NjEsImV4cCI6MTcxMDMxNTY2MSwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VyX2lkIjoiMWVlZGFlNmQtNjQ0Mi02YTlhLTgyOTQtYmZiMDgzYTBhMjkzIiwibmFtZSI6IkViZXIiLCJsYXN0bmFtZSI6IkJsYW5jbyIsImltYWdlIjpudWxsLCJlbWFpbCI6ImViZXJqLmJsYW5jb0BnbWFpbC5jb20ifQ.HozltDjO-pcwxfSA2MImzlekXLhfuDZ_jW14W9DdgHAMJZ7AqMMy7KVXYd5HxKrlKjrq3kClzY3mNn_APJx4zTAMa64iNYXc7aA64fLfvKZn77WwjOI2bELdu0QQcPf6QNlFD2kpL7A9HKjE2QSdyw2lh4YSuNFyJdvJQOc_RgPlHW0d4qR8__IwHAuTl2IaZ1auOCW5NjHzjSU13uXbRX_KXu-6g_fTsKAZCPvqmw5ip0MB0UKrMl0Me7qN-inI__eyoiwktMxHNAfRibRl2A7vwIAAZW9_HhOTBQTISRHySorI5sOQ4LDEfVuHoek-3C2PgScFSzZdRGjPHNCz8w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "personal_information_id",
+									"value": "1eedfb08-c833-63e6-8a76-e9bfac0bfaf0",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "www.kkk.com",
+									"type": "text"
+								},
+								{
+									"key": "certificate",
+									"type": "file",
+									"src": "/C:/Users/eberj/Downloads/IsologoMemorial_UV.png"
+								},
+								{
+									"key": "note",
+									"type": "file",
+									"src": "/C:/Users/eberj/Downloads/IsologoMemorial_UV.png"
+								},
+								{
+									"key": "funeralNotice",
+									"type": "file",
+									"src": "/C:/Users/eberj/Downloads/IsologoMemorial_UV.png"
+								},
+								{
+									"key": "signature",
+									"type": "file",
+									"src": "/C:/Users/eberj/Downloads/IsologoMemorial_UV.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/{{locale}}/request-facebook",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"{{locale}}",
+								"request-facebook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request_facebook_add_delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTAyNzI0NjEsImV4cCI6MTcxMDMxNTY2MSwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VyX2lkIjoiMWVlZGFlNmQtNjQ0Mi02YTlhLTgyOTQtYmZiMDgzYTBhMjkzIiwibmFtZSI6IkViZXIiLCJsYXN0bmFtZSI6IkJsYW5jbyIsImltYWdlIjpudWxsLCJlbWFpbCI6ImViZXJqLmJsYW5jb0BnbWFpbC5jb20ifQ.HozltDjO-pcwxfSA2MImzlekXLhfuDZ_jW14W9DdgHAMJZ7AqMMy7KVXYd5HxKrlKjrq3kClzY3mNn_APJx4zTAMa64iNYXc7aA64fLfvKZn77WwjOI2bELdu0QQcPf6QNlFD2kpL7A9HKjE2QSdyw2lh4YSuNFyJdvJQOc_RgPlHW0d4qR8__IwHAuTl2IaZ1auOCW5NjHzjSU13uXbRX_KXu-6g_fTsKAZCPvqmw5ip0MB0UKrMl0Me7qN-inI__eyoiwktMxHNAfRibRl2A7vwIAAZW9_HhOTBQTISRHySorI5sOQ4LDEfVuHoek-3C2PgScFSzZdRGjPHNCz8w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "personal_information_id",
+									"value": "1eedfb08-c833-63e6-8a76-e9bfac0bfaf0",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "www.kkk.com",
+									"type": "text"
+								},
+								{
+									"key": "certificate",
+									"type": "file",
+									"src": "/C:/Users/eberj/Downloads/IsologoMemorial_UV.png"
+								},
+								{
+									"key": "signature",
+									"type": "file",
+									"src": "/C:/Users/eberj/Downloads/IsologoMemorial_UV.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/{{locale}}/request-facebook-delete",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"{{locale}}",
+								"request-facebook-delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request_facebook_get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MDkzMjg2OTMsImV4cCI6MTcwOTM3MTg5Mywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOiIxZWVkNTg3ZC1mMzM1LTYwZjQtOWRmZS1jMWNlNWY4MTQ3NjkiLCJuYW1lIjoiRWJlciIsImxhc3RuYW1lIjoiQmxhbmNvIiwiaW1hZ2UiOm51bGwsImVtYWlsIjoiZWJlcmouYmxhbmNvQGdtYWlsLmNvbSJ9.SnCZrccaepXN-PA9-c5fzBpnLuNo6uJ5ZbRY-QV8Z2ffsNyDSsmTMoIkbn5AdquIs33j4Nwpc9gLphBIDBJttKfei07uShRAJcg2XFjQT9EnFfAJK9wLGrXhS069sht98tArksvhqWE4RWFt6Uf5pk0LPddvUCjK3NrHz_h_1vov5nF9eN3Oshfh5Lk-XCm_0H7rJ_-GUSb8c3mzfGeRtkMbDBj251oxcqt9RkDQJAdSd3Y6Z0u0Jhz1wSo19TojGoj8GM9i8KuQwx1LM7ITMYsP6-gqNJRAMdnHzdemuEFVHDZn6nIOCCDh9qt6L6NN8RLM3NMKWOR4o5pvhdTN0Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "//{\r\n//    \"id\":\"1eed566e-b51e-6fba-873a-4da5fd37640a\"\r\n//}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/{{locale}}/request-facebook",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"{{locale}}",
+								"request-facebook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request_facebook_edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MDUwNzU3MDYsImV4cCI6MTcwNTExODkwNiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOiIxZWU2NDY3Yi03N2EzLTYxMjItOTAzNS05NzJlMWZkMTJkNzMiLCJuYW1lIjoiSk9zZXBoIiwibGFzdG5hbWUiOiJNdWVudGVzIiwiaW1hZ2UiOm51bGwsImVtYWlsIjoiZWxncmFuam0zMDAwQGdtYWlsLmNvbSJ9.phQjFlDCMUONfx0IFk0P7JGnn6pqnsf6hURI2IYdCN7BfPXgBr-XdgjPCl2FdTt4IAMwz_SbBo7KeHqjc-_lVdEd_n1tQSdmQ9Ak_AS9YZgCYzvl7VnW78kjPIeEamqxmhoKuL-MDaHChq8DdLEhtWOePwf61Z2wWYUif1BnLRhBK3MDKmO61jEQr-k9gGuiESDTSJA8-TgxZZsJeEz07SicYNLXy6fIO-8Li_7doofBZ1yjUJF8cPNBM9mcCDtj5W64lFMMCiuZg-1SjvV1Qf5bKDFV2S5XGW09XAV1gUfq2u8z_iRIPJ-tHht97H5ShpOscNV-fbjwT4p2QtERUA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1eeb1655-7f30-6c7e-905d-43752fe20871",
+									"type": "text"
+								},
+								{
+									"key": "funeralNotice",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "www.godaddy.com",
+									"type": "text"
+								},
+								{
+									"key": "certificate",
+									"type": "file",
+									"src": "/home/muentes/Imágenes/patricio pantall/WhatsApp Image 2023-12-07 at 8.29.00 PM.jpeg"
+								},
+								{
+									"key": "note",
+									"type": "file",
+									"src": "/home/muentes/Imágenes/patricio pantall/WhatsApp Image 2023-12-07 at 8.29.00 PM.jpeg"
+								},
+								{
+									"key": "signature",
+									"type": "file",
+									"src": "/home/muentes/Imágenes/patricio pantall/WhatsApp Image 2023-12-07 at 8.25.21 PM.jpeg"
+								},
+								{
+									"key": "completed",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ruta}}/{{locale}}/request-facebook-edit",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"{{locale}}",
+								"request-facebook-edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request_facebook_delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MDkwNDkwMjEsImV4cCI6MTcwOTA5MjIyMSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJfaWQiOiIxZWVkNTg3ZC1mMzM1LTYwZjQtOWRmZS1jMWNlNWY4MTQ3NjkiLCJuYW1lIjoiRWJlciIsImxhc3RuYW1lIjoiQmxhbmNvIiwiaW1hZ2UiOm51bGwsImVtYWlsIjoiZWJlcmouYmxhbmNvQGdtYWlsLmNvbSJ9.f7vpwmzPSCA6zgvKjqlnAGeNn9Yd9aVgsuYpZJIUsCQtMXImCmtjKDVqKyuJQQlDnIw2wOtzw6qb1Gj0DqmnmvZ0zqU9h7EH110BuRtaK32XZmuQApko0P5qnnwq_YPPikaqpUvgeYsB6yolywLy6PZbUHkVaZLewGXmbTix2BklQZeR3OoM8-qTI8Tx-FMMGkgDf-IHT_XON-xN3JFwtNjmvsMzzOLsAePF3OotMo8iSgkgPpjV0mfCGovBjP90DiPBwTfq_Du-GsbOuBJbxGKIUsDWAH6aniqMbSiXBw_wrwQKe_EegJvvXf8BQdfWr0QYREDMH73oucqDiUOP_w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"1eed588b-1baa-6c48-9823-cdb1e8173b16\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/{{locale}}/request-facebook",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"{{locale}}",
+								"request-facebook"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "translator",
+			"item": [
+				{
+					"name": "translator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \t\"q\": \"Hola yo estoy en casa\",\r\n\t\t\"source\": \"auto\",\r\n\t\t\"target\": \"en\",\r\n\t\t\"format\": \"text\",\r\n\t\t\"api_key\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trans.zillyhuhn.com/translate",
+							"protocol": "https",
+							"host": [
+								"trans",
+								"zillyhuhn",
+								"com"
+							],
+							"path": [
+								"translate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ips",
+			"item": [
+				{
+					"name": "ip-user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ip\":\"190.97.246.86\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ruta}}/{{locale}}/ip-user",
+							"host": [
+								"{{ruta}}"
+							],
+							"path": [
+								"{{locale}}",
+								"ip-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login_get",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin-memorial@gmail.com\",\r\n    //\"password\": \"Kira.001\" //local\r\n    \"password\" : \"memorial.001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ruta}}/{{locale}}/login",
+					"host": [
+						"{{ruta}}"
+					],
+					"path": [
+						"{{locale}}",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{ruta}}/{{locale}}/prueba",
+					"host": [
+						"{{ruta}}"
+					],
+					"path": [
+						"{{locale}}",
+						"prueba"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
