@@ -13,18 +13,29 @@ services:
       
       db-cole:
             container_name : db-cole
-            command: mysqld --default-authentication-plugin=mysql_native_password
             image: mysql:8.0
             restart: always
             ports: 
-                  - "3307:3306"     
+                  - "3306:3306"     
             environment:
                   MYSQL_DATABASE: cole
                   MYSQL_USER: cole
-                  MYSQL_PASSWORD: cole.001
-                  MYSQL_ROOT_PASSWORD: cole.001 
+                  MYSQL_PASSWORD: cole.002
+                  MYSQL_ROOT_PASSWORD: cole.001
             volumes:               
                   - "./html/sql/var:/var/lib/mysql"      
+            networks:
+                  - default
+      phpmyadmin:
+            depends_on:
+                  - db-cole
+            image: phpmyadmin
+            restart: always
+            ports:
+                  - "8090:80"
+            environment:
+                  PMA_HOST: db-cole
+                  MYSQL_ROOT_PASSWORD: cole.001
             networks:
                   - default
     
