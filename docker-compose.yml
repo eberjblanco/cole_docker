@@ -1,18 +1,25 @@
 version: "3.1"
+networks:
+  custom_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+          gateway: 10.5.0.1
 services:
-      app-cole:
+      app-cole-test:
             build: .
-            container_name : app-cole
+            container_name : app-cole-test
             restart: always
             ports: 
                   - "8080:80"
             volumes:
-                  - ./html/app:/var/www/html
+                  - ./html:/var/www/html
             networks:
-                  - default 
-      
-      db-cole:
-            container_name : db-cole
+                  custom_net:
+                        ipv4_address: 10.5.0.2
+      db-cole-test:
+            container_name : db-cole-test
             image: mysql:8.0
             restart: always
             ports: 
@@ -23,12 +30,13 @@ services:
                   MYSQL_PASSWORD: cole.002
                   MYSQL_ROOT_PASSWORD: cole.001
             volumes:               
-                  - "./html/sql/var:/var/lib/mysql"      
+                  - "./html/mysql:/var/lib/mysql"      
             networks:
-                  - default
-      phpmyadmin:
+                  custom_net:
+                        ipv4_address: 10.5.0.3
+      phpmyadmin-test:
             depends_on:
-                  - db-cole
+                  - db-cole-test
             image: phpmyadmin
             restart: always
             ports:
@@ -37,6 +45,7 @@ services:
                   PMA_HOST: db-cole
                   MYSQL_ROOT_PASSWORD: cole.001
             networks:
-                  - default
+                  custom_net:
+                        ipv4_address: 10.5.0.4
     
 
